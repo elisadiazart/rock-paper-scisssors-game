@@ -1,0 +1,110 @@
+.main {
+  padding: 3rem;
+  max-width: 700px;
+  height: 540px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header{
+  display: flex;
+  align-items: center;
+}
+
+.box{
+  background-color: white;
+  color: #1f3756;
+  width: 150px;
+  height: 120px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.title--l{
+  font-size: 4rem;
+  margin: auto;
+  text-transform: uppercase;
+}
+
+.text{
+  font-size: 1rem;
+  margin: auto;
+  text-transform: uppercase;
+}
+
+.main--title{
+  color: white;
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 3rem;
+  margin: 0;
+  line-height: 2.5rem;
+}
+
+.triangle-background{
+  margin: auto;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+}
+
+.icon-container{
+  position: relative;
+  height: 300px;
+  width: 500px;
+  margin: auto;
+  margin-top: 2rem;
+}
+
+.icon{
+  width: 70px;
+  
+}
+
+.icon-background{
+  width: 170px;
+  height: 170px;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 50%;
+  box-shadow: inset 0px 6px 0px 0px hsl(0, 0%, 79%) , 0px 10px  rgb(35, 50, 116) ;
+  border: 17px solid rgb(55, 84, 209);
+  position: absolute;
+  left: 50px;
+  top: -50px;
+
+  &:hover{
+    box-shadow: inset 0px 6px 0px 0px hsl(0, 0%, 79%) , 0px 10px  rgb(35, 50, 116), 0px 0px 50px rgb(89, 121, 252)
+  }
+
+  &--yellow{
+    box-shadow: inset 0px 6px 0px 0px hsl(0, 0%, 79%) , 0px 10px  rgb(163, 131, 42) ;
+    border: 17px solid rgb(243, 210, 63);
+    right: 50px;
+    left: auto;
+    top: -50px;
+
+    &:hover{
+      box-shadow: inset 0px 6px 0px 0px hsl(0, 0%, 79%) , 0px 10px  rgb(163, 131, 42), 0px 0px 50px rgb(255, 216, 88)
+    }
+  }
+
+  &--red{
+    box-shadow: inset 0px 6px 0px 0px hsl(0, 0%, 79%) , 0px 10px  rgb(170, 45, 45) ;
+    border: 17px solid rgb(243, 63, 63);
+    transform: translate(-50%, -50%);
+    bottom: -100px;
+    top: auto;
+    left: 50%;
+
+    &:hover{
+      box-shadow: inset 0px 6px 0px 0px hsl(0, 0%, 79%) , 0px 10px  rgb(170, 45, 45), 0px 0px 50px rgb(255, 67, 67)
+    }
+  }
+}
