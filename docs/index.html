@@ -18,24 +18,33 @@
   <body>
     <header class="header">
       <div class="box">
-        <h3 class="text">you</h3>
-        <h2 class="title--l">0</h2>
+        <h4 class="text">you</h3>
+        <h2 id="you-counter" class="title--l">0</h2>
       </div>
       <h1 class="main--title">Rock <span class="main--title">Paper</span><span class="main--title">scissors</span></h1>
       <div class="box">
-        <h3 class="text">you</h3>
-        <h2 class="title--l">0</h2>
+        <h4 class="text">PC</h3>
+        <h2 id="pc-counter" class="title--l">0</h2>
       </div>
     </header>
     <main id="main" class="main">
-      <img class="triangle-background" src="../docs/assets/images/bg-triangle.svg" alt="">
-      <div class="icon-container">
-        <div class="icon-background">
-        <img class="icon" src="../docs/assets/images/icon-paper.svg" alt=""></div>
-        <div class="icon-background icon-background--yellow">
-        <img class="icon" src="../docs/assets/images/icon-scissors.svg" alt=""></div>
-        <div class="icon-background icon-background--red">
-        <img class="icon" src="../docs/assets/images/icon-rock.svg" alt=""></div>
+      <img id="triangle-background" class="triangle-background" src="../docs/assets/images/bg-triangle.svg" alt="">
+      <div id="icons-container" class="icon-container">
+        <img id="paper" class="icon icon--blue paper" src="../docs/assets/images/icon-paper.svg" alt="">
+        <img id="scissors" class="icon icon--yellow" src="../docs/assets/images/icon-scissors.svg" alt="">
+        <img id="rock" class="icon icon--red" src="../docs/assets/images/icon-rock.svg" alt="">
+      </div>
+      <div id="second-phase" class="second-phase-container">
+        <div class="move your-move">
+          <h3>You picked</h3>
+        <img id="icon" class="second-phase-icon" src="../docs/assets/images/icon-paper.svg" alt="">
+        </div>
+        <div class="second-phase-final">
+          <h2>You lose</h2>
+          <button id="button" class="button">Play again</button>
+        </div>
+        <div class="move pc-move"><h3>The PC picked</h3>
+          <img id="icon-pc" class="second-phase-icon" src="../docs/assets/images/icon-paper.svg" alt=""></div>
       </div>
     </main>
     <footer class="footer"></footer>

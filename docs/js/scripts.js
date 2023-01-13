@@ -1,104 +1,75 @@
-const pointsUserElement = document.getElementById('points-user');
-const pointsPcElement = document.getElementById('points-pc');
+const icons = document.getElementById('icons-container');
+const pcMove = ['paper', 'scissors', 'rock'];
+const background = document.getElementById('triangle-background');
 
-const mainElement = document.getElementById('main');
+const secondPhase = document.getElementById('second-phase');
+const secondPhaseIconYou = document.getElementById('icon');
+const secondPhaseIconPc = document.getElementById('icon-pc');
+const button = document.getElementById('button');
 
-const firstStepElement = document.getElementById('first-step');
-const secondStepElement = document.getElementById('second-step');
+const generateRandomNumber = () => {
+  return Math.floor(Math.random() * pcMove.length);
+};
 
-const gameResultElement = document.getElementById('game-result');
+const youCounter = document.getElementById('you-counter');
+const pcCounter = document.getElementById('pc-counter');
+let pcPoints = 0;
+let yourPoints = 0;
 
-const playAgainElement = document.getElementById('play-again');
-
-const GAME_OPTIONS = ['rock', 'scissors', 'paper'];
-
-const GAME_RULES = {
+const moves = {
   rock: {
     scissors: true,
     paper: false
   },
   scissors: {
-    rock: false,
-    paper: true
+    paper: true,
+    rock: false
   },
   paper: {
-    scissors: false,
-    rock: true
+    rock: true,
+    scissors: false
   }
 };
 
-let currentScreen = 1;
-let pointsUser = 0;
-let pointsPc = 0;
-let userIcon;
-let pcIcon;
-
-const resetGame = () => {
-  userIcon.classList.remove('game-item--show');
-  pcIcon.classList.remove('game-item--show');
+const changePhase = e => {
+  icons.classList.toggle('display-none');
+  background.classList.toggle('display-none');
+  secondPhase.classList.toggle('display');
 };
 
-const changeScreen = () => {
-  if (currentScreen === 1) {
-    currentScreen = 2;
-    firstStepElement.classList.remove('first-step--show');
-    secondStepElement.classList.add('second-step--show');
-  } else {
-    currentScreen = 1;
-    firstStepElement.classList.add('first-step--show');
-    secondStepElement.classList.remove('second-step--show');
-  }
-};
+const winOrLose = (you, pc) => {
+  changePhase();
+  secondPhaseIconYou.src = `assets/images/icon-${you}.svg`;
+  secondPhaseIconPc.src = `assets/images/icon-${pc}.svg`;
+  if (moves[you][pc]) {
+    console.log('Has ganado');
+    yourPoints++;
+    youCounter.textContent = yourPoints;
 
-const updateScore = () => {
-  pointsPcElement.textContent = pointsPc;
-  pointsUserElement.textContent = pointsUser;
-};
-
-const checkWinner = (userPlay, pcPlay) => {
-  if (userPlay === undefined || pcPlay === undefined) {
-    console.log('ERROR');
     return;
   }
+  if (you === pc) {
+    console.log('Empate');
+  } else {
+    console.log('Has perdido');
+    pcPoints++;
+    pcCounter.textContent = pcPoints;
+  }
+};
 
-  if (userPlay === pcPlay) {
-    gameResultElement.textContent = 'DRAW';
+icons.addEventListener('click', e => {
+  if (e.target === icons) {
     return;
   }
-
-  if (GAME_RULES[userPlay][pcPlay]) {
-    gameResultElement.textContent = 'YOU WIN';
-    pointsUser++;
-  } else {
-    pointsPc++;
-    gameResultElement.textContent = 'YOU LOSE';
-  }
-
-  updateScore();
-};
-
-const optionsSelection = userSelection => {
-  const pcSelection = selectPcElement();
-  userIcon = document.getElementById(`${userSelection}-user`);
-  pcIcon = document.getElementById(`${pcSelection}-pc`);
-  userIcon.classList.add('game-item--show');
-  pcIcon.classList.add('game-item--show');
-  checkWinner(userSelection, pcSelection);
-};
-
-const selectPcElement = () => {
-  const result = Math.floor(Math.random() * (GAME_OPTIONS.length - 1));
-  return GAME_OPTIONS[result];
-};
-
-firstStepElement.addEventListener('click', ev => {
-  if (ev.target.classList.contains('game-item__image')) {
-    changeScreen();
-    optionsSelection(ev.target.dataset.element);
-  }
+  const yourMove = e.target.id;
+  const pcMoveRandom = pcMove[generateRandomNumber()];
+  console.log(yourMove);
+  console.log(pcMoveRandom);
+  winOrLose(yourMove, pcMoveRandom);
 });
 
-playAgainElement.addEventListener('click', () => {
-  changeScreen();
-  resetGame();
+button.addEventListener('click', e => {
+  icons.classList.remove('display-none');
+  background.classList.remove('display-none');
+  secondPhase.classList.toggle('display');
 });

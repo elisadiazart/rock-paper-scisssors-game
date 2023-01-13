@@ -49,7 +49,7 @@
   margin: auto;
   position: absolute;
   transform: translate(-50%, -50%);
-  top: 50%;
+  top: 29rem;
   left: 50%;
   z-index: -1;
 }
@@ -62,49 +62,100 @@
   margin-top: 2rem;
 }
 
-.icon{
-  width: 70px;
-  
+.paper{
+  box-shadow: inset 0px 6px 0px 0px hsl(0, 0%, 79%) , 0px 10px  rgb(35, 50, 116) ;
+  border: 17px solid rgb(55, 84, 209);
+  &:hover{
+    box-shadow: inset 0px 6px 0px 0px hsl(0, 0%, 79%) , 0px 10px  rgb(35, 50, 116), 0px 0px 50px rgb(89, 121, 252)
+  }
 }
 
-.icon-background{
+
+.scissors{
+  box-shadow: inset 0px 6px 0px 0px hsl(0, 0%, 79%) , 0px 10px  rgb(163, 131, 42) ;
+    border: 17px solid rgb(243, 210, 63);
+    &:hover{
+      box-shadow: inset 0px 6px 0px 0px hsl(0, 0%, 79%) , 0px 10px  rgb(163, 131, 42), 0px 0px 50px rgb(255, 216, 88)
+    }
+}
+
+.rock{
+  box-shadow: inset 0px 6px 0px 0px hsl(0, 0%, 79%) , 0px 10px  rgb(170, 45, 45) ;
+    border: 17px solid rgb(243, 63, 63);
+    &:hover{
+      box-shadow: inset 0px 6px 0px 0px hsl(0, 0%, 79%) , 0px 10px  rgb(170, 45, 45), 0px 0px 50px rgb(255, 36, 36)
+    }
+}
+
+
+
+
+.icon{
   width: 170px;
   height: 170px;
   background-color: white;
   padding: 2rem;
   border-radius: 50%;
-  box-shadow: inset 0px 6px 0px 0px hsl(0, 0%, 79%) , 0px 10px  rgb(35, 50, 116) ;
-  border: 17px solid rgb(55, 84, 209);
   position: absolute;
   left: 50px;
   top: -50px;
-
-  &:hover{
-    box-shadow: inset 0px 6px 0px 0px hsl(0, 0%, 79%) , 0px 10px  rgb(35, 50, 116), 0px 0px 50px rgb(89, 121, 252)
-  }
+  object-fit: scale-down;
 
   &--yellow{
-    box-shadow: inset 0px 6px 0px 0px hsl(0, 0%, 79%) , 0px 10px  rgb(163, 131, 42) ;
-    border: 17px solid rgb(243, 210, 63);
     right: 50px;
     left: auto;
-    top: -50px;
-
-    &:hover{
-      box-shadow: inset 0px 6px 0px 0px hsl(0, 0%, 79%) , 0px 10px  rgb(163, 131, 42), 0px 0px 50px rgb(255, 216, 88)
-    }
+    top: -50px; 
   }
 
   &--red{
-    box-shadow: inset 0px 6px 0px 0px hsl(0, 0%, 79%) , 0px 10px  rgb(170, 45, 45) ;
-    border: 17px solid rgb(243, 63, 63);
     transform: translate(-50%, -50%);
     bottom: -100px;
     top: auto;
     left: 50%;
-
-    &:hover{
-      box-shadow: inset 0px 6px 0px 0px hsl(0, 0%, 79%) , 0px 10px  rgb(170, 45, 45), 0px 0px 50px rgb(255, 67, 67)
-    }
   }
+}
+
+.second-phase{
+  &-container{
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  display: none;
+  }
+  &-icon{
+    width: 170px;
+    height: 160px;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 50%;
+    box-shadow: inset 0px 6px 0px 0px hsl(0, 0%, 79%) , 0px 10px  rgb(35, 50, 116) ;
+    border: 17px solid rgb(55, 84, 209);
+    object-fit: scale-down;
+  }
+  &-final{
+    text-align: center;
+    margin: 1rem;
+  }
+}
+
+.move{
+  text-align: center;
+  margin: 2rem;
+}
+
+.button{
+  padding: .8rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  border-radius: 8px;
+}
+
+.display-none{
+  display: none;
+}
+
+.display{
+  display: flex;
 }
