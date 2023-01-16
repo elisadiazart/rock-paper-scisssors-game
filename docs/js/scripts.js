@@ -3,9 +3,9 @@ const pcMove = ['paper', 'scissors', 'rock'];
 const background = document.getElementById('triangle-background');
 
 const secondPhase = document.getElementById('second-phase');
-const secondPhaseIconYou = document.getElementById('icon');
-const secondPhaseIconPc = document.getElementById('icon-pc');
 const button = document.getElementById('button');
+const iconYou = document.getElementById('icon-you')
+const iconPc = document.getElementById('icon-pc')
 
 const generateRandomNumber = () => {
   return Math.floor(Math.random() * pcMove.length);
@@ -39,8 +39,8 @@ const changePhase = e => {
 
 const winOrLose = (you, pc) => {
   changePhase();
-  secondPhaseIconYou.src = `assets/images/icon-${you}.svg`;
-  secondPhaseIconPc.src = `assets/images/icon-${pc}.svg`;
+  iconYou.src = `assets/images/icon-${you}.svg`;
+  iconPc.src = `assets/images/icon-${pc}.svg`;
   if (moves[you][pc]) {
     console.log('Has ganado');
     yourPoints++;
@@ -63,9 +63,12 @@ icons.addEventListener('click', e => {
   }
   const yourMove = e.target.id;
   const pcMoveRandom = pcMove[generateRandomNumber()];
+  iconYou.classList.add(`${yourMove}`)
+  iconPc.classList.add(`${pcMoveRandom}`)
   console.log(yourMove);
   console.log(pcMoveRandom);
   winOrLose(yourMove, pcMoveRandom);
+  
 });
 
 button.addEventListener('click', e => {

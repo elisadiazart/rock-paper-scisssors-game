@@ -65,6 +65,7 @@
 .paper{
   box-shadow: inset 0px 6px 0px 0px hsl(0, 0%, 79%) , 0px 10px  rgb(35, 50, 116) ;
   border: 17px solid rgb(55, 84, 209);
+  object-fit: scale-down;
   &:hover{
     box-shadow: inset 0px 6px 0px 0px hsl(0, 0%, 79%) , 0px 10px  rgb(35, 50, 116), 0px 0px 50px rgb(89, 121, 252)
   }
@@ -74,6 +75,7 @@
 .scissors{
   box-shadow: inset 0px 6px 0px 0px hsl(0, 0%, 79%) , 0px 10px  rgb(163, 131, 42) ;
     border: 17px solid rgb(243, 210, 63);
+    object-fit: scale-down;
     &:hover{
       box-shadow: inset 0px 6px 0px 0px hsl(0, 0%, 79%) , 0px 10px  rgb(163, 131, 42), 0px 0px 50px rgb(255, 216, 88)
     }
@@ -82,6 +84,7 @@
 .rock{
   box-shadow: inset 0px 6px 0px 0px hsl(0, 0%, 79%) , 0px 10px  rgb(170, 45, 45) ;
     border: 17px solid rgb(243, 63, 63);
+    object-fit: scale-down;
     &:hover{
       box-shadow: inset 0px 6px 0px 0px hsl(0, 0%, 79%) , 0px 10px  rgb(170, 45, 45), 0px 0px 50px rgb(255, 36, 36)
     }
@@ -128,9 +131,6 @@
     background-color: white;
     padding: 2rem;
     border-radius: 50%;
-    box-shadow: inset 0px 6px 0px 0px hsl(0, 0%, 79%) , 0px 10px  rgb(35, 50, 116) ;
-    border: 17px solid rgb(55, 84, 209);
-    object-fit: scale-down;
   }
   &-final{
     text-align: center;
