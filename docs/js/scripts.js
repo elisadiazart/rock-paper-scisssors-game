@@ -6,6 +6,7 @@ const secondPhase = document.getElementById('second-phase');
 const button = document.getElementById('button');
 const iconYou = document.getElementById('icon-you')
 const iconPc = document.getElementById('icon-pc')
+const result = document.getElementById('result-message')
 
 const generateRandomNumber = () => {
   return Math.floor(Math.random() * pcMove.length);
@@ -42,16 +43,16 @@ const winOrLose = (you, pc) => {
   iconYou.src = `assets/images/icon-${you}.svg`;
   iconPc.src = `assets/images/icon-${pc}.svg`;
   if (moves[you][pc]) {
-    console.log('Has ganado');
+    result.textContent= 'You win';
     yourPoints++;
     youCounter.textContent = yourPoints;
 
     return;
   }
   if (you === pc) {
-    console.log('Empate');
+    result.textContent= 'Tie';
   } else {
-    console.log('Has perdido');
+    result.textContent= 'You lose';
     pcPoints++;
     pcCounter.textContent = pcPoints;
   }
@@ -75,4 +76,6 @@ button.addEventListener('click', e => {
   icons.classList.remove('display-none');
   background.classList.remove('display-none');
   secondPhase.classList.toggle('display');
+  iconYou.classList.remove('scissors', 'rock', 'paper')
+  iconPc.classList.remove('scissors', 'rock', 'paper')
 });
